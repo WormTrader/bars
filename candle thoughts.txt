@@ -1,0 +1,45 @@
+want comparisons like
+first thing to check is range
+if not tiny then check direction
+check gap/overlap
+
+big up (marubozo or long day) vs another big up
+small bar - not much change
+
+Features of individual candles coded as bit flags
+for 4 choices: 00 = zero(e.g. doji) 01(small) (10
+bits
+UD change: up/down/doji
+00 doji
+10 up
+01 down
+
+range(overall size): 0 small medium large xl
+ - must use average range of some sort (ATR)
+
+___ body size/range: 0(doji) 1/3 1/2 3/4(long day) 1(marubozo)
+000 doji
+001 small
+011 1/3
+010 1/2
+110 3/4 (long day)
+100 large(marubozo)
+ 
+TB body position: top middle bottom
+00 no cange/no range
+10 top
+01 bottom
+11 middle
+
+       vs.
+upper shadow length 0 small med large
+lower shadow length 0 small med large
+                                  marubozo    hammer        long day       star
+  |        XX______    00.1111.00  00.0011.11  01.1111.01  11.
+_|_
+|    |
+|    |  __XXXX__
+|    |
+-----
+  |       ______XX
+  |
